@@ -62,7 +62,14 @@ namespace MKProgram
 
                 for (int j = 0; j < 7; j++)
                 {
-                    pol[j] = messageArray1[j];
+                    if(j+i >= 1605720)
+                    {
+                        pol[j] = false;
+                    }
+                    else 
+                    {
+                        pol[j] = messageArray1[j + i]; 
+                    }
                 }
                     int[] row = new int[7];
                     BitArray result = new BitArray(8); //{ 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -159,11 +166,15 @@ namespace MKProgram
                         res[l + 7] = result[l];
                     }
 
-                    for(int k = 0; k < 15; k++)
-                    {
-                        messageCoded[k] = res[k];
-                    }
-                
+                //for(int k = 0; k < 15; k++)
+                //{
+                //    messageCoded[k] = res[k];
+                //}
+
+                for (int k = 0; k < 15; k++)
+                {
+                    messageCoded[k + i] = res[k];
+                }
             }
             return messageCoded;
         }
