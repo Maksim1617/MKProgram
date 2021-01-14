@@ -54,7 +54,8 @@ namespace MKProgram
         static BitArray MyCoding1(BitArray messageArray1)
         {
             int countBits = messageArray1.Count; // кількість біт в масиві
-            BitArray messageCoded = new BitArray(countBits + countBits / 7 * 8, false); // новий пустий масив біт
+            int newBits = (int) Math.Ceiling(countBits / 7.0) * 8;
+            BitArray messageCoded = new BitArray(countBits + newBits, false); // новий пустий масив біт
 
             for (int i = 0; i < countBits; i += 7)
             {
@@ -62,11 +63,11 @@ namespace MKProgram
 
                 for (int j = 0; j < 7; j++)
                 {
-                    if(j+i >= 1605720)
+                    if (j + i >= countBits)
                     {
                         pol[j] = false;
                     }
-                    else 
+                    else
                     {
                         pol[j] = messageArray1[j + i]; 
                     }
@@ -183,6 +184,10 @@ namespace MKProgram
         {
             MyCoding.f();
             MyCoding.text1 = textBox1.Text;
+
+            radioButton1.Checked = true;
+            radioButton6.Checked = true;
+            radioButton3.Checked = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
