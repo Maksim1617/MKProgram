@@ -174,7 +174,7 @@ namespace MKProgram
 
                 for (int k = 0; k < 15; k++)
                 {
-                    messageCoded[k + i] = res[k];
+                    messageCoded[k + (15*(i/7))] = res[k];
                 }
             }
             return messageCoded;
