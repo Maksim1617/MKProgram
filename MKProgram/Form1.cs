@@ -55,7 +55,20 @@ namespace MKProgram
         {
             int countBits = messageArray1.Count; // кількість біт в масиві
             int newBits = (int) Math.Ceiling(countBits / 7.0) * 8;
-            BitArray messageCoded = new BitArray(countBits + newBits, false); // новий пустий масив біт
+            int lastBits = countBits + newBits;
+            for (int d = 0; d < 100; d++)
+            {
+                if(lastBits % 15 == 0)
+                {
+                    lastBits = lastBits;
+                    break;
+                }
+                else
+                {
+                    lastBits++;
+                }
+            }
+            BitArray messageCoded = new BitArray(lastBits, false); // новий пустий масив біт
 
             for (int i = 0; i < countBits; i += 7)
             {
