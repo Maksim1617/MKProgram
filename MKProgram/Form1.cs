@@ -57,18 +57,6 @@ namespace MKProgram
             int newBits = (int) Math.Ceiling(countBits / 7.0) * 8;
             int lastBits = countBits + newBits;
             lastBits = lastBits + (lastBits % 15); // так коротше )
-            //for (int d = 0; d < 100; d++)
-            //{
-            //    if(lastBits % 15 == 0)
-            //    {
-            //        lastBits = lastBits;
-            //        break;
-            //    }
-            //    else
-            //    {
-            //        lastBits++;
-            //    }
-            //}
             BitArray messageCoded = new BitArray(lastBits, false); // новий пустий масив біт
 
             for (int i = 0; i < countBits; i += 7)
