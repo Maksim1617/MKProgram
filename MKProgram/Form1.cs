@@ -202,7 +202,7 @@ namespace MKProgram
                         count = 1;
                         break;
                     }
-                    messageCodedd[j+(7*(i/15))] = messageArray2[j + (15 * (i / 15))]; //під питанням цей запис 
+                    messageCodedd[j+(7*(i/15))] = messageArray2[j + (15 * (i / 15))]; 
                 }
             }
             return messageCodedd;
