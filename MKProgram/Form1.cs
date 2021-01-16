@@ -14,8 +14,11 @@ namespace MKProgram
 {
     public partial class Form1 : Form
     {
+        static int counterBits;
         BitArray messageArray1;
         BitArray messageCoded1;
+        BitArray messageArray2;
+        BitArray messageDecoded1;
         string pathout = "";
         bool Coding = false;
         bool Decoding = false;
@@ -181,6 +184,29 @@ namespace MKProgram
             }
             return messageCoded;
         }
+        static BitArray MyDeCoding(BitArray messageArray2)
+        {
+            int countBits = messageArray2.Count; // кількість біт в масиві
+            BitArray messageCodedd = new BitArray(counterBits, false);
+            int count = 0;
+            for (int i = 0; i < countBits; i+=15)
+            {
+                if(count == 1)
+                {
+                    break;
+                }   
+                for (int j = 0; j < 7; j++)
+                {
+                    if (j + (7 * (i / 15)) == counterBits)
+                    {
+                        count = 1;
+                        break;
+                    }
+                    messageCodedd[j+(7*(i/15))] = messageArray2[j + (15 * (i / 15))]; //під питанням цей запис 
+                }
+            }
+            return messageCodedd;
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -208,6 +234,7 @@ namespace MKProgram
                 string filename = openFileDialog1.FileName;
                 // читаем файл в строку
                 messageArray1 = ConvertFileToBitArray(filename);
+                counterBits = messageArray1.Count;
                 textBox1.Text = filename;   
             }
             if(Decoding == true)
@@ -216,6 +243,7 @@ namespace MKProgram
                     return;
                 // получаем выбранный файл
                 string filename = openFileDialog1.FileName;
+                messageArray2 = ConvertFileToBitArray(filename);
                 textBox1.Text = filename;
             }
         }
@@ -260,6 +288,12 @@ namespace MKProgram
             {
                 messageCoded1 = MyCoding1(messageArray1);
                 System.IO.File.WriteAllBytes(pathout, BitArrayToBytes(messageCoded1));
+                MessageBox.Show("Файл сохранен");
+            }
+            if (Decoding == true)
+            {
+                messageDecoded1 = MyDeCoding(messageArray2);
+                System.IO.File.WriteAllBytes(pathout, BitArrayToBytes(messageDecoded1));
                 MessageBox.Show("Файл сохранен");
             }
         }
