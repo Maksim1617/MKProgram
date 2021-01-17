@@ -215,6 +215,7 @@
             this.radioButton7.TabIndex = 1;
             this.radioButton7.Text = "31";
             this.radioButton7.UseVisualStyleBackColor = true;
+            this.radioButton7.CheckedChanged += new System.EventHandler(this.radioButton7_CheckedChanged);
             // 
             // radioButton6
             // 
@@ -225,6 +226,7 @@
             this.radioButton6.TabIndex = 0;
             this.radioButton6.Text = "15";
             this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
             // 
             // button2
             // 
