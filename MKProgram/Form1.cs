@@ -115,58 +115,55 @@ namespace MKProgram
                         }
                     }
 
-                    //for (int c = 0; c < counter; c++)
-                    //{
-                        if (row[0] == 1)
+                    if (row[0] == 1)
+                    {
+                        for (int l = 0; l < 8; l++)
                         {
-                            for (int l = 0; l < 8; l++)
-                            {
-                                result[l] ^= row0[l];
-                            }
+                            result[l] ^= row0[l];
                         }
-                        if (row[1] == 1)
+                    }
+                    if (row[1] == 1)
+                    {
+                        for (int l = 0; l < 8; l++)
                         {
-                            for (int l = 0; l < 8; l++)
-                            {
-                                result[l] ^= row1[l];
-                            }
+                            result[l] ^= row1[l];
                         }
-                        if (row[2] == 1)
+                    }
+                    if (row[2] == 1)
+                    {
+                        for (int l = 0; l < 8; l++)
                         {
-                            for (int l = 0; l < 8; l++)
-                            {
-                                result[l] ^= row2[l];
-                            }
+                            result[l] ^= row2[l];
                         }
-                        if (row[3] == 1)
+                    }
+                    if (row[3] == 1)
+                    {
+                        for (int l = 0; l < 8; l++)
                         {
-                            for (int l = 0; l < 8; l++)
-                            {
-                                result[l] ^= row3[l];
-                            }
+                            result[l] ^= row3[l];
                         }
-                        if (row[4] == 1)
+                    }
+                    if (row[4] == 1)
+                    {
+                        for (int l = 0; l < 8; l++)
                         {
-                            for (int l = 0; l < 8; l++)
-                            {
-                                result[l] ^= row4[l];
-                            }
+                            result[l] ^= row4[l];
                         }
-                        if (row[5] == 1)
+                    }
+                    if (row[5] == 1)
+                    {
+                        for (int l = 0; l < 8; l++)
                         {
-                            for (int l = 0; l < 8; l++)
-                            {
-                                result[l] ^= row5[l];
-                            }
+                            result[l] ^= row5[l];
                         }
-                        if (row[6] == 1)
+                    }
+                    if (row[6] == 1)
+                    {
+                        for (int l = 0; l < 8; l++)
                         {
-                            for (int l = 0; l < 8; l++)
-                            {
-                                result[l] ^= row6[l];
-                            }
+                            result[l] ^= row6[l];
                         }
-                    //}
+                    }
 
                     for (int l = 0; l <= 6; l++)
                     {
@@ -289,156 +286,153 @@ namespace MKProgram
                         }
                     }
 
-                    //for (int c = 0; c < counter; c++)
-                    //{
-                        if (row[0] == 1)
+                    if (row[0] == 1)
+                    {
+                        for (int l = 0; l < 10; l++)
                         {
-                            for (int l = 0; l < 10; l++)
-                            {
-                                result[l] ^= row0[l];
-                            }
+                            result[l] ^= row0[l];
                         }
-                        if (row[1] == 1)
+                    }
+                    if (row[1] == 1)
+                    {
+                        for (int l = 0; l < 10; l++)
                         {
-                            for (int l = 0; l < 10; l++)
-                            {
-                                result[l] ^= row1[l];
-                            }
+                            result[l] ^= row1[l];
                         }
-                        if (row[2] == 1)
+                    }
+                    if (row[2] == 1)
+                    {
+                        for (int l = 0; l < 10; l++)
                         {
-                            for (int l = 0; l < 10; l++)
-                            {
-                                result[l] ^= row2[l];
-                            }
+                            result[l] ^= row2[l];
                         }
-                        if (row[3] == 1)
+                    }
+                    if (row[3] == 1)
+                    {
+                        for (int l = 0; l < 10; l++)
                         {
-                            for (int l = 0; l < 10; l++)
-                            {
-                                result[l] ^= row3[l];
-                            }
+                            result[l] ^= row3[l];
                         }
-                        if (row[4] == 1)
+                    }
+                    if (row[4] == 1)
+                    {
+                        for (int l = 0; l < 10; l++)
                         {
-                            for (int l = 0; l < 10; l++)
-                            {
-                                result[l] ^= row4[l];
-                            }
+                            result[l] ^= row4[l];
                         }
-                        if (row[5] == 1)
+                    }
+                    if (row[5] == 1)
+                    {
+                        for (int l = 0; l < 10; l++)
                         {
-                            for (int l = 0; l < 10; l++)
-                            {
-                                result[l] ^= row5[l];
-                            }
+                            result[l] ^= row5[l];
                         }
-                        if (row[6] == 1)
+                    }
+                    if (row[6] == 1)
+                    {
+                        for (int l = 0; l < 10; l++)
                         {
-                            for (int l = 0; l < 10; l++)
-                            {
-                                result[l] ^= row6[l];
-                            }
+                            result[l] ^= row6[l];
                         }
-                        if (row[7] == 1)
+                    }
+                    if (row[7] == 1)
+                    {
+                        for (int l = 0; l < 10; l++)
                         {
-                            for (int l = 0; l < 10; l++)
-                            {
-                                result[l] ^= row7[l];
-                            }
+                            result[l] ^= row7[l];
                         }
-                        if (row[8] == 1)
+                    }
+                    if (row[8] == 1)
+                    {
+                        for (int l = 0; l < 10; l++)
                         {
-                            for (int l = 0; l < 10; l++)
-                            {
-                                result[l] ^= row8[l];
-                            }
+                            result[l] ^= row8[l];
                         }
-                        if (row[9] == 1)
+                    }
+                    if (row[9] == 1)
+                    {
+                        for (int l = 0; l < 10; l++)
                         {
-                            for (int l = 0; l < 10; l++)
-                            {
-                                result[l] ^= row9[l];
-                            }
+                            result[l] ^= row9[l];
                         }
-                        if (row[10] == 1)
+                    }
+                    if (row[10] == 1)
+                    {
+                        for (int l = 0; l < 10; l++)
                         {
-                            for (int l = 0; l < 10; l++)
-                            {
-                                result[l] ^= row10[l];
-                            }
+                            result[l] ^= row10[l];
                         }
-                        if (row[11] == 1)
+                    }
+                    if (row[11] == 1)
+                    {
+                        for (int l = 0; l < 10; l++)
                         {
-                            for (int l = 0; l < 10; l++)
-                            {
-                                result[l] ^= row11[l];
-                            }
+                            result[l] ^= row11[l];
                         }
-                        if (row[12] == 1)
+                    }
+                    if (row[12] == 1)
+                    {
+                        for (int l = 0; l < 10; l++)
                         {
-                            for (int l = 0; l < 10; l++)
-                            {
-                                result[l] ^= row12[l];
-                            }
+                            result[l] ^= row12[l];
                         }
-                        if (row[13] == 1)
+                    }
+                    if (row[13] == 1)
+                    {
+                        for (int l = 0; l < 10; l++)
                         {
-                            for (int l = 0; l < 10; l++)
-                            {
-                                result[l] ^= row13[l];
-                            }
+                            result[l] ^= row13[l];
                         }
-                        if (row[14] == 1)
+                    }
+                    if (row[14] == 1)
+                    {
+                        for (int l = 0; l < 10; l++)
                         {
-                            for (int l = 0; l < 10; l++)
-                            {
-                                result[l] ^= row14[l];
-                            }
+                            result[l] ^= row14[l];
                         }
-                        if (row[15] == 1)
+                    }
+                    if (row[15] == 1)
+                    {
+                        for (int l = 0; l < 10; l++)
                         {
-                            for (int l = 0; l < 10; l++)
-                            {
-                                result[l] ^= row15[l];
-                            }
+                            result[l] ^= row15[l];
                         }
-                        if (row[16] == 1)
+                    }
+                    if (row[16] == 1)
+                    {
+                        for (int l = 0; l < 10; l++)
                         {
-                            for (int l = 0; l < 10; l++)
-                            {
-                                result[l] ^= row16[l];
-                            }
+                            result[l] ^= row16[l];
                         }
-                        if (row[17] == 1)
+                    }
+                    if (row[17] == 1)
+                    {
+                        for (int l = 0; l < 10; l++)
                         {
-                            for (int l = 0; l < 10; l++)
-                            {
-                                result[l] ^= row17[l];
-                            }
+                            result[l] ^= row17[l];
                         }
-                        if (row[18] == 1)
+                    }
+                    if (row[18] == 1)
+                    {
+                        for (int l = 0; l < 10; l++)
                         {
-                            for (int l = 0; l < 10; l++)
-                            {
-                                result[l] ^= row18[l];
-                            }
+                            result[l] ^= row18[l];
                         }
-                        if (row[19] == 1)
+                    }
+                    if (row[19] == 1)
+                    {
+                        for (int l = 0; l < 10; l++)
                         {
-                            for (int l = 0; l < 10; l++)
-                            {
-                                result[l] ^= row19[l];
-                            }
+                            result[l] ^= row19[l];
                         }
-                        if (row[20] == 1)
+                    }
+                    if (row[20] == 1)
+                    {
+                        for (int l = 0; l < 10; l++)
                         {
-                            for (int l = 0; l < 10; l++)
-                            {
-                                result[l] ^= row20[l];
-                            }
+                            result[l] ^= row20[l];
                         }
-                    //}
+                    }
                     for (int l = 0; l <= 20; l++)
                     {
                         res[l] = pol[l];
@@ -649,8 +643,6 @@ namespace MKProgram
                         }
                     }
 
-                    //for (int c = 0; c < counter-1; c++)
-                    //{
                     if (row[0] == 1)
                     {
                         for (int l = 0; l < 12; l++)
@@ -1008,7 +1000,6 @@ namespace MKProgram
                             result[l] ^= row50[l];
                         }
                     }
-                    //}
                     for (int l = 0; l <= 50; l++)
                     {
                         res[l] = pol[l];
@@ -1129,7 +1120,7 @@ namespace MKProgram
             {
                 if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                     return;
-                // получаем выбранный файл
+                // отримуємо вибраний файл
                 string filename = openFileDialog1.FileName;
                 // читаем файл в строку
                 messageArray1 = ConvertFileToBitArray(filename);
@@ -1140,7 +1131,7 @@ namespace MKProgram
             {
                 if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                     return;
-                // получаем выбранный файл
+                // отримуємо вибраний файл
                 string filename = openFileDialog1.FileName;
                 messageArray2 = ConvertFileToBitArray(filename);
                 textBox1.Text = filename;
@@ -1153,7 +1144,7 @@ namespace MKProgram
             {
                 if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
                     return;
-                // получаем выбранный файл
+                // отримуємо файл для збереження
                 string filename = saveFileDialog1.FileName;
                 pathout = filename;
                 textBox2.Text = filename;
@@ -1162,7 +1153,7 @@ namespace MKProgram
             {
                 if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
                     return;
-                // получаем выбранный файл
+                // отримуємо файл для збереження
                 string filename = saveFileDialog1.FileName;
                 pathout = filename;
                 textBox2.Text = filename;
@@ -1183,16 +1174,24 @@ namespace MKProgram
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text == string.Empty)
+            {
+                MessageBox.Show("Необхідно вибрати вхідний файл!");
+                return;
+            }
+            if (textBox2.Text == string.Empty)
+            {
+                MessageBox.Show("Необхідно вибрати вихідний файл!");
+                return;
+            }
             if (Coding == true)
             {
-                //messageCoded1 = MyCoding2(messageArray1);
                 messageCoded1 = MyCoding1(messageArray1);
                 System.IO.File.WriteAllBytes(pathout, BitArrayToBytes(messageCoded1));
                 MessageBox.Show("Файл сохранен");
             }
             if (Decoding == true)
             {
-                //messageDecoded1 = MyDeCoding1(messageArray2);
                 messageDecoded1 = MyDeCoding(messageArray2);
                 System.IO.File.WriteAllBytes(pathout, BitArrayToBytes(messageDecoded1));
                 MessageBox.Show("Файл сохранен");
