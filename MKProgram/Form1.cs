@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CyclicCodes;
 
 namespace MKProgram
 {
@@ -1217,6 +1218,12 @@ namespace MKProgram
             length63 = true;
             length15 = false;
             length31 = false;
+        }
+
+        private void button_Info_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
         }
     }
 }

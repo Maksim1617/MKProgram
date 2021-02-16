@@ -55,11 +55,20 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyCoding.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -89,6 +98,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Cyber_Insurance-512 — копия.ico" />
+    <None Include="Resources\iconfinder_Info01_928433.png" />
+    <None Include="Resources\iconfinder_arrow-right_227601.png" />
+    <None Include="Resources\iconfinder_arrow-left_227602.png" />
+    <None Include="Resources\15.png" />
+    <None Include="Resources\14.png" />
+    <None Include="Resources\13.png" />
+    <None Include="Resources\12.png" />
+    <None Include="Resources\11.png" />
+    <None Include="Resources\10.png" />
+    <None Include="Resources\9.png" />
+    <None Include="Resources\8.png" />
+    <None Include="Resources\7.png" />
+    <None Include="Resources\6.png" />
+    <None Include="Resources\5.png" />
+    <None Include="Resources\4.png" />
+    <None Include="Resources\3.png" />
+    <None Include="Resources\2.png" />
+    <None Include="Resources\1.png" />
     <None Include="Resources\Ico.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

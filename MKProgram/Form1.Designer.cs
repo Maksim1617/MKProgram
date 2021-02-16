@@ -49,6 +49,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button_Info = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -58,11 +59,11 @@
             // 
             this.groupBox1.Controls.Add(this.radioButton4);
             this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Location = new System.Drawing.Point(308, 53);
+            this.groupBox1.Location = new System.Drawing.Point(292, 172);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox1.Size = new System.Drawing.Size(180, 93);
+            this.groupBox1.Size = new System.Drawing.Size(171, 93);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Кратність помилки";
@@ -91,7 +92,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(39, 198);
+            this.textBox1.Location = new System.Drawing.Point(28, 57);
             this.textBox1.Margin = new System.Windows.Forms.Padding(5);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(393, 26);
@@ -99,7 +100,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(39, 276);
+            this.textBox2.Location = new System.Drawing.Point(28, 135);
             this.textBox2.Margin = new System.Windows.Forms.Padding(5);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(393, 26);
@@ -108,7 +109,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 165);
+            this.label1.Location = new System.Drawing.Point(31, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 20);
@@ -118,7 +119,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 238);
+            this.label2.Location = new System.Drawing.Point(31, 97);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 20);
@@ -129,7 +130,7 @@
             // 
             this.groupBox2.Controls.Add(this.radioButton2);
             this.groupBox2.Controls.Add(this.radioButton1);
-            this.groupBox2.Location = new System.Drawing.Point(46, 35);
+            this.groupBox2.Location = new System.Drawing.Point(35, 171);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(5);
@@ -162,10 +163,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(507, 260);
+            this.button1.Location = new System.Drawing.Point(252, 300);
             this.button1.Margin = new System.Windows.Forms.Padding(5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 82);
+            this.button1.Size = new System.Drawing.Size(170, 75);
             this.button1.TabIndex = 6;
             this.button1.Text = "Очистити";
             this.button1.UseVisualStyleBackColor = true;
@@ -176,7 +177,7 @@
             this.groupBox3.Controls.Add(this.radioButton8);
             this.groupBox3.Controls.Add(this.radioButton7);
             this.groupBox3.Controls.Add(this.radioButton6);
-            this.groupBox3.Location = new System.Drawing.Point(202, 35);
+            this.groupBox3.Location = new System.Drawing.Point(191, 171);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(92, 123);
             this.groupBox3.TabIndex = 7;
@@ -222,9 +223,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(507, 170);
+            this.button4.Location = new System.Drawing.Point(68, 300);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(168, 82);
+            this.button4.Size = new System.Drawing.Size(170, 75);
             this.button4.TabIndex = 10;
             this.button4.Text = "Виконати";
             this.button4.UseVisualStyleBackColor = true;
@@ -233,7 +234,7 @@
             // button3
             // 
             this.button3.BackgroundImage = global::CyclicCodes.Properties.Resources.kisspng_computer_icons_ellipsis_hamburger_button_user_black_dots_5add0799287ca5_6889437615244348411659;
-            this.button3.Location = new System.Drawing.Point(444, 276);
+            this.button3.Location = new System.Drawing.Point(433, 135);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(30, 26);
             this.button3.TabIndex = 9;
@@ -244,18 +245,30 @@
             // 
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(444, 198);
+            this.button2.Location = new System.Drawing.Point(433, 57);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(30, 26);
             this.button2.TabIndex = 8;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button_Info
+            // 
+            this.button_Info.BackgroundImage = global::CyclicCodes.Properties.Resources.iconfinder_Info01_928433;
+            this.button_Info.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_Info.Location = new System.Drawing.Point(437, 323);
+            this.button_Info.Name = "button_Info";
+            this.button_Info.Size = new System.Drawing.Size(35, 28);
+            this.button_Info.TabIndex = 11;
+            this.button_Info.UseVisualStyleBackColor = true;
+            this.button_Info.Click += new System.EventHandler(this.button_Info_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(727, 368);
+            this.ClientSize = new System.Drawing.Size(484, 392);
+            this.Controls.Add(this.button_Info);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -271,8 +284,9 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.MaximumSize = new System.Drawing.Size(743, 407);
-            this.MinimumSize = new System.Drawing.Size(743, 407);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(500, 431);
+            this.MinimumSize = new System.Drawing.Size(500, 431);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Циклический кодер/декодер";
@@ -310,6 +324,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button_Info;
     }
 }
 
