@@ -19,7 +19,7 @@ namespace MKProgram
         BitArray messageArray1;
         BitArray messageCoded1;
         BitArray messageArray2;
-        BitArray messageDecoded1;
+        //BitArray messageDecoded1;
         string pathout = "";
         bool Coding = false;
         bool Decoding = false;
@@ -58,18 +58,24 @@ namespace MKProgram
             return bytes;
         }
 
-        static BitArray MyCoding1(BitArray messageArray1)
+        private BitArray MyCoding(BitArray messageArrayInFile)
         {
-            if ( length15 == true)
+            if (length15 == true)
             {
-                int countBits = messageArray1.Count; // кількість біт в масиві
+                int countBits = messageArrayInFile.Count; // кількість біт в масиві
                 int newBits = (int)Math.Ceiling(countBits / 7.0) * 8;
                 int lastBits = countBits + newBits;
                 if (newBits != 0) lastBits = lastBits + (7 - (countBits % 7));
                 BitArray messageCoded = new BitArray(lastBits, false); // новий пустий масив біт
 
+                progressBar1.Maximum = countBits;
+                progressBar1.Value = 0;
+
                 for (int i = 0; i < countBits; i += 7)
                 {
+                    progressBar1.Value = i;
+                    Application.DoEvents();
+
                     BitArray pol = new BitArray(7);
 
                     for (int j = 0; j < 7; j++)
@@ -80,7 +86,7 @@ namespace MKProgram
                         }
                         else
                         {
-                            pol[j] = messageArray1[j + i];
+                            pol[j] = messageArrayInFile[j + i];
                         }
                     }
                     int[] row = new int[7];
@@ -184,14 +190,20 @@ namespace MKProgram
             }
             if (length31 == true)
             {
-                int countBits = messageArray1.Count; // кількість біт в масиві
+                int countBits = messageArrayInFile.Count; // кількість біт в масиві
                 int newBits = (int)Math.Ceiling(countBits / 21.0) * 10;
                 int lastBits = countBits + newBits;
                 if (newBits != 0) lastBits = lastBits + (21 - (countBits % 21));
                 BitArray messageCoded = new BitArray(lastBits, false); // новий пустий масив біт
 
+                progressBar1.Maximum = countBits;
+                progressBar1.Value = 0;
+
                 for (int i = 0; i < countBits; i += 21)
                 {
+                    progressBar1.Value = i;
+                    Application.DoEvents();
+
                     BitArray pol = new BitArray(21);
 
                     for (int j = 0; j < 21; j++)
@@ -202,7 +214,7 @@ namespace MKProgram
                         }
                         else
                         {
-                            pol[j] = messageArray1[j + i];
+                            pol[j] = messageArrayInFile[j + i];
                         }
                     }
                     int[] row = new int[21];
@@ -452,14 +464,20 @@ namespace MKProgram
             }
             if (length63 == true)
             {
-                int countBits = messageArray1.Count; // кількість біт в масиві
+                int countBits = messageArrayInFile.Count; // кількість біт в масиві
                 int newBits = (int)Math.Ceiling(countBits / 51.0) * 12;
                 int lastBits = countBits + newBits;
                 if (newBits != 0) lastBits = lastBits + (51 - (countBits % 51));
                 BitArray messageCoded = new BitArray(lastBits, false); // новий пустий масив біт
 
+                progressBar1.Maximum = countBits;
+                progressBar1.Value = 0;
+
                 for (int i = 0; i < countBits; i += 51)
                 {
+                    progressBar1.Value = i;
+                    Application.DoEvents();
+
                     BitArray pol = new BitArray(51);
 
                     for (int j = 0; j < 51; j++)
@@ -470,7 +488,7 @@ namespace MKProgram
                         }
                         else
                         {
-                            pol[j] = messageArray1[j + i];
+                            pol[j] = messageArrayInFile[j + i];
                         }
                     }
                     int[] row = new int[51];
@@ -1018,19 +1036,34 @@ namespace MKProgram
             }
             else
             {
-                return messageArray1;
+                return messageArrayInFile;
             }
         }
 
-        static BitArray MyDeCoding(BitArray messageArray2)
+        private BitArray MyDeCoding(BitArray messageArrayInFile)
         {
+            int countBits = messageArrayInFile.Count; // кількість біт в масиві
+            int count = 0;
+            progressBar1.Value = 0;
+
             if (length15 == true)
-            {
-                int countBits = messageArray2.Count; // кількість біт в масиві
-                BitArray messageCodedd = new BitArray(counterBits, false);
-                int count = 0;
+            {                
+                progressBar1.Maximum = countBits;
+
+                // розрахунок змінної counterBits для випадку length15 == true
+                /////////////////////////////////////////////
+                int a = (int)(countBits / 15.0) * 7;
+                int b = (int)(a / 8.0);
+                int lastBits = b * 8;
+                int counterBits = lastBits; /// <- !!!!!!!!
+                BitArray messageCodedd = new BitArray(counterBits, false); // тут використовується НЕ static int counterBits;
+                /////////////////////////////////////////////
+
                 for (int i = 0; i < countBits; i += 15)
                 {
+                    progressBar1.Value = i;
+                    Application.DoEvents();
+
                     if (count == 1)
                     {
                         break;
@@ -1042,18 +1075,24 @@ namespace MKProgram
                             count = 1;
                             break;
                         }
-                        messageCodedd[j + (7 * (i / 15))] = messageArray2[j + (15 * (i / 15))];
+                        messageCodedd[j + (7 * (i / 15))] = messageArrayInFile[j + (15 * (i / 15))];
                     }
                 }
                 return messageCodedd;
             }
             if (length31 == true)
             {
-                int countBits = messageArray2.Count; // кількість біт в масиві
+                progressBar1.Maximum = countBits;
+                //int countBits = messageArrayInFile.Count; // кількість біт в масиві
+                //TODO: переписати код для розрахунку змінної counterBits
                 BitArray messageCodedd = new BitArray(counterBits, false);
-                int count = 0;
+                //int count = 0;
+
                 for (int i = 0; i < countBits; i += 31)
                 {
+                    progressBar1.Value = i;
+                    Application.DoEvents();
+
                     if (count == 1)
                     {
                         break;
@@ -1065,18 +1104,24 @@ namespace MKProgram
                             count = 1;
                             break;
                         }
-                        messageCodedd[j + (21 * (i / 31))] = messageArray2[j + (31 * (i / 31))];
+                        messageCodedd[j + (21 * (i / 31))] = messageArrayInFile[j + (31 * (i / 31))];
                     }
                 }
                 return messageCodedd;
             }
             if (length63 == true)
             {
-                int countBits = messageArray2.Count; // кількість біт в масиві
+                progressBar1.Maximum = countBits;
+                //int countBits = messageArrayInFile.Count; // кількість біт в масиві
+                //TODO: переписати код для розрахунку змінної counterBits
                 BitArray messageCodedd = new BitArray(counterBits, false);
-                int count = 0;
+                //int count = 0;
+
                 for (int i = 0; i < countBits; i += 63)
                 {
+                    progressBar1.Value = i;
+                    Application.DoEvents();
+
                     if (count == 1)
                     {
                         break;
@@ -1088,25 +1133,26 @@ namespace MKProgram
                             count = 1;
                             break;
                         }
-                        messageCodedd[j + (51 * (i / 63))] = messageArray2[j + (63 * (i / 63))];
+                        messageCodedd[j + (51 * (i / 63))] = messageArrayInFile[j + (63 * (i / 63))];
                     }
                 }
                 return messageCodedd;
             }
             else
-            {
-                return messageArray2;
-            }
+                return messageArrayInFile;
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MyCoding.f();
-            MyCoding.text1 = textBox1.Text;
+            //MyCoding.f();
+            //MyCoding.text1 = textBox1.Text;
 
             radioButton1.Checked = true;
             radioButton6.Checked = true;
             radioButton3.Checked = true;
+
+            progressBar1.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -1126,9 +1172,9 @@ namespace MKProgram
                 // читаем файл в строку
                 messageArray1 = ConvertFileToBitArray(filename);
                 counterBits = messageArray1.Count;
-                textBox1.Text = filename;   
+                textBox1.Text = filename;
             }
-            if(Decoding == true)
+            if (Decoding == true)
             {
                 if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                     return;
@@ -1180,23 +1226,38 @@ namespace MKProgram
                 MessageBox.Show("Необхідно вибрати вхідний файл!");
                 return;
             }
+            if (File.Exists(textBox1.Text) == false)
+            {
+                MessageBox.Show("Відсутній вхідний файл \n(вкажіть правильно шлях до вхідного файлу)");
+                return;
+            }
             if (textBox2.Text == string.Empty)
             {
                 MessageBox.Show("Необхідно вибрати вихідний файл!");
                 return;
             }
+
+            string pathInFile = textBox1.Text;
+            BitArray messageArrayInFile = ConvertFileToBitArray(pathInFile);
+
+            string pathOutFile = textBox2.Text;
+
+            progressBar1.Visible = true;
             if (Coding == true)
             {
-                messageCoded1 = MyCoding1(messageArray1);
-                System.IO.File.WriteAllBytes(pathout, BitArrayToBytes(messageCoded1));
-                MessageBox.Show("Файл сохранен");
+                BitArray messageCoded = MyCoding(messageArrayInFile);
+                
+                System.IO.File.WriteAllBytes(pathOutFile, BitArrayToBytes(messageCoded));
+                MessageBox.Show("Вихідний файл закодовано \nі збережено у вихідний файл");
             }
             if (Decoding == true)
             {
-                messageDecoded1 = MyDeCoding(messageArray2);
-                System.IO.File.WriteAllBytes(pathout, BitArrayToBytes(messageDecoded1));
-                MessageBox.Show("Файл сохранен");
+                BitArray messageDecoded = MyDeCoding(messageArrayInFile);
+
+                System.IO.File.WriteAllBytes(pathOutFile, BitArrayToBytes(messageDecoded));
+                MessageBox.Show("Вихідний файл декодовано \nі збережено у вихідний файл");
             }
+            progressBar1.Visible = false;
         }
 
         private void radioButton7_CheckedChanged(object sender, EventArgs e)
