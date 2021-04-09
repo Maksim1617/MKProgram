@@ -1052,9 +1052,10 @@ namespace MKProgram
 
                 // розрахунок змінної counterBits для випадку length15 == true
                 /////////////////////////////////////////////
-                int a = (int)(countBits / 15.0) * 7;
-                int b = (int)(a / 8.0);
-                int lastBits = b * 8;
+                int a = (int)(countBits / 15.0) * 8;
+                int b = countBits - (countBits % 15);
+                int lastBits = b - a;
+                lastBits = lastBits - (lastBits % 8);
                 int counterBits = lastBits; /// <- !!!!!!!!
                 BitArray messageCodedd = new BitArray(counterBits, false); // тут використовується НЕ static int counterBits;
                 /////////////////////////////////////////////
@@ -1118,10 +1119,16 @@ namespace MKProgram
             if (length63 == true)
             {
                 progressBar1.Maximum = countBits;
-                //int countBits = messageArrayInFile.Count; // кількість біт в масиві
-                //TODO: переписати код для розрахунку змінної counterBits
-                BitArray messageCodedd = new BitArray(counterBits, false);
-                //int count = 0;
+
+                // розрахунок змінної counterBits для випадку length63 == true
+                /////////////////////////////////////////////
+                int a = (int)(countBits / 63.0) * 12;
+                int b = countBits - (countBits % 63);
+                int lastBits = b - a;
+                lastBits = lastBits - (lastBits % 8);
+                int counterBits = lastBits; /// <- !!!!!!!!
+                BitArray messageCodedd = new BitArray(counterBits, false); // тут використовується НЕ static int counterBits;
+                /////////////////////////////////////////////
 
                 for (int i = 0; i < countBits; i += 63)
                 {
