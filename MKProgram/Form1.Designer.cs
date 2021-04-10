@@ -221,6 +221,11 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Title = "Виберіть файл який потрібно Кодувати/Декодувати";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Title = "Введіть ім\'я файлу";
             // 
             // button4
             // 
